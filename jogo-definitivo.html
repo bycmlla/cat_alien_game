@@ -20,7 +20,7 @@
    
       /* Cores e fundo */
       color: rgb(0, 0, 0);
-      background: url(img/botao-jogar.png);
+      background: url(img/paw.png);
          
       /* Fonte */
       font-size: 20px;
@@ -47,7 +47,7 @@
    <!--Tag | É obrigatório ter width (largura) e height(altura)-->
    <canvas id="canvas_animacao" width="500" height="500"></canvas>
    
-   <a id="link_jogar" href="javascript: iniciarJogo()" style="color: antiquewhite;">Jogar</a>
+   <a id="link_jogar" href="javascript: iniciarJogo()" style="color: antiquewhite;"></a>
    
    <!--Para desenhar no Canvas, é preciso executar um script após ele 
     ter sido carregado. Neste script obteremos o contexto gráfico,
@@ -72,7 +72,7 @@
       function carregarImagens() {
          // Objeto contendo os nomes das imagens
          imagens = {
-            espaco:   'fundo-espaco.png', 
+            espaco:   'teste02.png', 
             estrelas: 'fundo-estrelas.png', 
             nuvens:   'fundo-nuvens.png', 
             nave:     'nave-spritesheet.png', 
@@ -82,7 +82,7 @@
          /*Temos que esperar todas as imagens serem carregadas.
         Isso é feito através do evento 'onload'.
         Definimos um contador para saber quantas já foram carregdas. 
-        Quando estiverem prontas, a aplicação pode iniciar de fato.*/
+        Quando estiverem prontas, a aplicação pode iniciar de fato. */
 
          // Carregar todas
          for (var i in imagens) {
@@ -108,15 +108,15 @@
          // Texto "Carregando"
          context.fillStyle = 'white';
          context.strokeStyle = 'black';
-         context.font = '50px sans-serif';
-         context.fillText("Carregando...", 100, 200);
-         context.strokeText("Carregando...", 100, 200);
+         context.font = '40px sans-serif';
+         context.fillText("Clique na patinha!!!", 80, 250);
+         context.strokeText("Clique na patinha!!!", 80, 250);
          
          // Barra de loading
          carregadas++;
-         var tamanhoTotal = 300;
+         var tamanhoTotal = 0;
          var tamanho = carregadas / totalImagens * tamanhoTotal;
-         context.fillStyle = 'yellow';
+         //context.fillStyle = 'yellow';
          context.fillRect(100, 250, tamanho, 50);
          
          context.restore();         
