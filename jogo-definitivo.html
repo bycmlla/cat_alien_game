@@ -19,7 +19,7 @@
       display: none;
    
       /* Cores e fundo */
-      color: white;
+      color: rgb(0, 0, 0);
       background: url(img/botao-jogar.png);
          
       /* Fonte */
@@ -35,8 +35,7 @@
       left: 220px;
       top: 330px;
 
-      /* A imagem do botão é 72x72, descontamos os paddings 
-      (padding define uma a distância entre o conteúdo de um elemento e suas bordas)*/
+      /* A imagem do botão é 72x72, descontamos os paddings */
       width: 52px;
       height: 26px;
       padding: 23px 10px;
@@ -48,7 +47,7 @@
    <!--Tag | É obrigatório ter width (largura) e height(altura)-->
    <canvas id="canvas_animacao" width="500" height="500"></canvas>
    
-   <a id="link_jogar" href="javascript: iniciarJogo()">Jogar</a>
+   <a id="link_jogar" href="javascript: iniciarJogo()" style="color: antiquewhite;">Jogar</a>
    
    <!--Para desenhar no Canvas, é preciso executar um script após ele 
     ter sido carregado. Neste script obteremos o contexto gráfico,
@@ -73,15 +72,13 @@
       function carregarImagens() {
          // Objeto contendo os nomes das imagens
          imagens = {
-            espaco:   'background.jpg', 
+            espaco:   'fundo-espaco.png', 
             estrelas: 'fundo-estrelas.png', 
             nuvens:   'fundo-nuvens.png', 
             nave:     'nave-spritesheet.png', 
-            ovni:     'teste01.png',
+            ovni:     'ovni.png',
             explosao: 'explosao.png'
          };
-
-         
          /*Temos que esperar todas as imagens serem carregadas.
         Isso é feito através do evento 'onload'.
         Definimos um contador para saber quantas já foram carregdas. 
@@ -163,13 +160,13 @@
       animação*/
       function configuracoesIniciais() {
          // Fundos | Cada um, a uma velocidade diferente
-         espaco.velocidade = 0;
-         estrelas.velocidade = 140;
+         espaco.velocidade = 60;
+         estrelas.velocidade = 150;
          nuvens.velocidade = 500;
          
          // Nave
          nave.posicionar();
-         nave.velocidade = 400;
+         nave.velocidade = 200;
          
          /*Vamos agora configurar a criação dos inimigos como um 
          processamento da animação*/

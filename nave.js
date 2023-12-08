@@ -81,23 +81,21 @@ Nave.prototype = {
       // Estes valores vão sendo ajustados aos poucos
       var rets = 
       [ 
-         {x: this.x+2, y: this.y+19, largura: 9, altura: 13},
-         {x: this.x+13, y: this.y+3, largura: 10, altura: 33},
-         {x: this.x+25, y: this.y+19, largura: 9, altura: 13}
+         {x: this.x+13, y: this.y+3, largura: 17, altura: 45},
       ];
       
       // Desenhando os retângulos para visualização | Comentar após concluir modificações
-      //var ctx = this.context;
+      var ctx = this.context;
       
-      //for (var i in rets) {
-         //ctx.save();
-         //ctx.strokeStyle = 'yellow';
-         //ctx.strokeRect(rets[i].x, rets[i].y, rets[i].largura, 
-              //rets[i].altura);
-         //ctx.restore();
-      //}
+    //   for (var i in rets) {
+    //      ctx.save();
+     //     ctx.strokeStyle = 'yellow';
+     //     ctx.strokeRect(rets[i].x, rets[i].y, rets[i].largura, 
+     //                    rets[i].altura);
+         ctx.restore();
+    //   }
       
-      //return rets;
+      return rets;
    },//Não esquecer dessa vírgula sempre que for criar um novo método.
    colidiuCom: function(outro) {
       // Se colidiu com um Ovni...

@@ -28,7 +28,7 @@ Podemos ajustar novas velocidades com valores maiores em
 Ovni.prototype = {
    atualizar: function() {
       this.y += 
-         this.velocidade * this.animacao.decorrido / 1500;
+         this.velocidade * this.animacao.decorrido / 1000;
       
       if (this.y > this.context.canvas.height) {
          this.animacao.excluirSprite(this);
@@ -45,22 +45,22 @@ Ovni.prototype = {
       // Estes valores vão sendo ajustados aos poucos
       var rets = 
       [ 
-         {x: this.x+20, y: this.y+1, largura: 25, altura: 10},
-         {x: this.x+2, y: this.y+11, largura: 60, altura: 12},
-         {x: this.x+20, y: this.y+23, largura: 25, altura: 7},
+         {x: this.x+1, y: this.y+1, largura: 50, altura: 65},
+         //{x: this.x+2, y: this.y+11, largura: 60, altura: 12},
+         //{x: this.x+20, y: this.y+23, largura: 25, altura: 7},
       ];
       
       // Desenhando os retângulos para visualização | Comentar após realizar modificações
-      //var ctx = this.context;
+      var ctx = this.context;
       
-      //for (var i in rets) {
-        // ctx.save();
-         //ctx.strokeStyle = 'yellow';
-         //ctx.strokeRect(rets[i].x, rets[i].y, rets[i].largura, 
-                      //  rets[i].altura);
-         //ctx.restore();
-      //}
-      //return rets;
+     // for (var i in rets) {
+     //    ctx.save();
+     //    ctx.strokeStyle = 'yellow';
+     //    ctx.strokeRect(rets[i].x, rets[i].y, rets[i].largura, 
+     //                   rets[i].altura);
+     //    ctx.restore();
+     // }
+      return rets;
    },//Não esquecer dessa vírgula sempre que for criar um novo método.
    colidiuCom: function(outro) {
       // Se colidiu com um Tiro, os dois desaparecem
@@ -74,5 +74,4 @@ Ovni.prototype = {
          this.animacao.novoSprite(explosao);
       }
    }
-
 }
